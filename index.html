@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EVCentral - Your Electric Vehicle Service Platform</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .hero-image.active {
+            opacity: 1;
+        }
+        .hero-text {
+            position: relative;
+            color: white;
+            text-align: center;
+            z-index: 1;
+        }
+        .ecosystem {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .ecosystem img {
+            max-width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+        .ecosystem img:hover {
+            transform: scale(1.05);
+        }
+        .expertise {
+            display: flex;
+        }
+        .expertise-column {
+            flex: 1;
+            padding: 50px;
+        }
+        .expertise-column.emsp {
+            background-color: #f0f0f0;
+        }
+        .expertise-column.cpo {
+            background-color: #e0e0e0;
+        }
+        .expertise-point {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .expertise-point.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .evwiki {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .evwiki-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .contact {
+            padding: 50px 0;
+            text-align: center;
+        }
+        .contact form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .contact button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .contact {
+            padding: 50px 0;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        .contact-info {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#ecosystem">EV Ecosystem</a>
+        <a href="#expertise">Our Expertise</a>
+        <a href="#evwiki">EVWiki</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <section class="hero">
+        <img src="placeholder_charging_station.jpg" alt="EV Charging Station" class="hero-image">
+        <img src="placeholder_ev_charging.jpg" alt="EV Charging" class="hero-image">
+        <img src="placeholder_ev_ecosystem.jpg" alt="EV Charging Map" class="hero-image">
+        <img src="placeholder_charging_stations.jpg" alt="EV Charging Stations" class="hero-image">
+        <div class="hero-text">
+            <h1>Welcome to EVCentral</h1>
+            <p id="tagline">Your one-stop platform for all EV services</p>
+        </div>
+    </section>
+
+    <section id="ecosystem" class="ecosystem">
+        <h2>EV Ecosystem</h2>
+        <img src="placeholder_ev_ecosystem.jpg" alt="EV Ecosystem">
+    </section>
+
+    <section id="expertise" class="expertise">
+        <div class="expertise-column emsp">
+            <h2>eMSP</h2>
+            <div class="expertise-point">
+                <p>- Charging capabilities</p>
+            </div>
+            <div class="expertise-point">
+                <p>- Multiple CPO integrations - OCPI or otherwise</p>
+            </div>
+            <div class="expertise-point">
+                <p>- Recommendation engine</p>
+            </div>
+        </div>
+        <div class="expertise-column cpo">
+            <h2>CPO</h2>
+            <div class="expertise-point">
+                <p>- OCPP integration</p>
+            </div>
+            <div class="expertise-point">
+                <p>- Software architecture with 90%+ uptime</p>
+            </div>
+            <div class="expertise-point">
+                <p>- OCPI CPO end</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="evwiki" class="evwiki">
+        <h2>EVWiki</h2>
+        <!-- <a href="#" class="evwiki-button">EV Types</a>-->
+        <a href="https://en.wikipedia.org/wiki/Charging_station" class="evwiki-button">Charging Standards</a>
+        <a href="https://evroaming.org/the-ideal-ev-roaming-protocol/" class="evwiki-button">EV Roaming Protocol</a>
+        <a href="https://openchargealliance.org/protocols/open-charge-point-protocol/" class="evwiki-button">OCPP Protocol</a>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:noufal@hamon.in">noufal@hamon.in</a></p>
+            <p><strong>Phone:</strong> +91 95670 91835</p>
+            <p><strong>Address:</strong> Second floor, Bhavans building, Opp.Calicut books, Near Kuthiravattom hospital, Kozhikode, Kerala 673016</p>
+            <p><strong>Business Hours:</strong> Monday - Friday, 9:00 AM - 5:00 PM</p>
+        </div>
+    </section>
+
+    <script>
+        // Hero image rotation
+        const heroImages = document.querySelectorAll('.hero-image');
+        let currentImageIndex = 0;
+
+        function rotateHeroImage() {
+            heroImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            heroImages[currentImageIndex].classList.add('active');
+        }
+
+        setInterval(rotateHeroImage, 2000);
+        heroImages[0].classList.add('active');
+
+        // Expertise points animation
+        const expertisePoints = document.querySelectorAll('.expertise-point');
+
+        function checkExpertisePoints() {
+            expertisePoints.forEach(point => {
+                const rect = point.getBoundingClientRect();
+                const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+                if (isVisible) {
+                    point.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkExpertisePoints);
+        checkExpertisePoints();
+
+        // Dynamic tagline
+        const taglines = [
+            "Your one-stop platform for all EV services",
+            "Empowering the future of electric mobility",
+            "Connecting EV drivers with charging solutions",
+            "Simplifying the EV charging experience"
+        ];
+        let currentTaglineIndex = 0;
+        const taglineElement = document.getElementById('tagline');
+
+        function rotateTagline() {
+            currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
+            taglineElement.textContent = taglines[currentTaglineIndex];
+        }
+
+        setInterval(rotateTagline, 2000);
+    </script>
+</body>
+</html>
